@@ -75,7 +75,7 @@ class HomeScreen extends React.Component {
     }
   render() {
     return (
-      <View style={styles.containerMain}>
+     <View style={styles.containerMain}>
      <View style={styles.box1}>
       <View style={{alignItems: 'center', justifyContent: 'center' }}>
        <View ><Image source={require('./src/img/cover.png')} style={styles.image1} /></View>
@@ -91,12 +91,12 @@ class HomeScreen extends React.Component {
           onPress={() => this.props.navigation.navigate('View')}
         />
         </View>
-      </View>
        </View>
+      </View>
       <View style={styles.footer}>
         <Text style= {{ color: 'white' }}> copyright@putriii_d</Text>
-        </View>
-          </View>
+      </View>
+     </View>
     );
   }
 }
@@ -111,7 +111,6 @@ class DetailsScreen extends React.Component {
         date: '',
         title: '',
         my_diary: '',
-
       };
     }
 InsertDataIntoMySQL = () =>
@@ -235,8 +234,8 @@ class ViewScreen extends React.Component {
 componentDidMount()  {
     this.setState({ ActivityIndicator_Loading : true }, () =>
     {
-        this.setState({refreshing: true});
-        const url = 'http://putridarma.000webhostapp.com/putridarma049/getData.php';
+     this.setState({refreshing: true});
+      const url = 'http://putridarma.000webhostapp.com/putridarma049/getData.php';
        //this.setState({ loading: true });
         fetch (url)
         .then((response) => response.json())
@@ -260,9 +259,9 @@ componentDidMount()  {
       <View style = {{flex:1,backgroundColor:'#FF80AB', alignItems : 'center', padding: 20}}>
        <Image source={require('./src/img/list.png')}  style={styles.image2} />
        <Text style={{ fontSize: 16, color: 'white', textAlign: 'center' }}>The List Of My Diary</Text>          
-           {
-          this.state.ActivityIndicator_Loading ? <ActivityIndicator color='#2196F3' size='large'style={styles.ActivityIndicatorStyle} /> : null        
-          }
+        {
+        this.state.ActivityIndicator_Loading ? <ActivityIndicator color='#2196F3' size='large'style={styles.ActivityIndicatorStyle} /> : null        
+        }
         <FlatList
           data={this.state.data}
           keyExtractor={this._keyExtractor}
@@ -293,9 +292,9 @@ componentDidMount()  {
                   color="#E91E63"
                 />
                 <Button
-                    title="Home"
-                    color="#E91E63"
-                    onPress={() => this.props.navigation.navigate('Home')}
+                 title="Home"
+                 color="#E91E63"
+                 onPress={() => this.props.navigation.navigate('Home')}
             />
           </View>
           </View>
@@ -333,9 +332,7 @@ class EditScreen extends React.Component {
           body: JSON.stringify({
         
             date : this.state.date
-        
           })
-        
           }).then((response) => response.json())
           .then((responseJson) => {
             this.setState({ ActivityIndicator_Loading : false });
@@ -347,8 +344,6 @@ class EditScreen extends React.Component {
              console.error(error);
              this.setState({ ActivityIndicator_Loading : false });
           });
-
-          
           });
       }
     render() {
@@ -564,7 +559,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   ActivityIndicatorStyle:{
-      
       position: 'absolute',
       left: 0,
       right: 0,
