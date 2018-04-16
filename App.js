@@ -55,7 +55,7 @@ class LogoEdit extends React.Component {
     return (
     <View style={styles.header}>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color:'white' }}> EDIT DIARY </Text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color:'white' }}> DELETE DIARY </Text>
       </View>
       </View>
     );
@@ -368,7 +368,7 @@ class EditScreen extends React.Component {
               textAlign: 'center',
               backgroundColor: 'white',
               margin: 7 }}
-              placeholder="find date to remove your diary"
+              placeholder="write down date to remove your diary"
               value={this.state.date}
               onChangeText={(date) => this.setState({ date })}
               keyboardType='numeric'   
